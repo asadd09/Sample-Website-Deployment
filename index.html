@@ -1,54 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR International | Industrial Label Manufacturing</title>
+    <title>Professional AI Web Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #020617; /* Dark background for galaxy */
+            background-color: #020617; /* Deep galaxy blue */
+            margin: 0;
+            font-family: sans-serif;
         }
         .bg-industrial {
-            background-color: rgba(248, 250, 252, 0.05); /* Made more transparent for galaxy */
+            background-color: rgba(248, 250, 252, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .text-brand-primary {
-            color: #3b82f6; /* Lighter blue for dark background */
+            color: #3b82f6;
         }
-        .bg-brand-primary {
-            background-color: #1e40af;
-        }
-        /* Custom scrollbar for professional look */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-          background: #020617;
-        }
-        ::-webkit-scrollbar-thumb {
-          background: #1e293b;
-          border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-          background: #334155;
-        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
-    "ogl": "https://esm.sh/ogl@1.0.11"
-  }
-}
-</script>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.2.0",
+        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
+      }
+    }
+    </script>
 </head>
 <body class="text-slate-100 overflow-x-hidden">
+    
     <div id="root"></div>
+
+    <script type="module">
+        import React, { useState } from 'react';
+        import { createRoot } from 'react-dom/client';
+
+        function App() {
+            return (
+                <div className="min-h-screen flex flex-col items-center justify-center px-4">
+                    {/* Hero Section */}
+                    <nav className="fixed top-0 w-full p-6 flex justify-between items-center bg-slate-950/50 backdrop-blur-md z-50">
+                        <div className="text-xl font-bold tracking-tighter">VIBE<span className="text-blue-500">LABS</span></div>
+                        <div className="space-x-6 text-sm font-medium">
+                            <a href="#" className="hover:text-blue-400 transition">Work</a>
+                            <a href="#" className="hover:text-blue-400 transition">Services</a>
+                            <button className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition">Contact</button>
+                        </div>
+                    </nav>
+
+                    <main className="text-center mt-20">
+                        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                            High-Performance <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                                AI-Driven Websites
+                            </span>
+                        </h1>
+                        <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                            We build stunning, responsive, and high-conversion websites in record time using advanced AI workflows. Fast delivery. Professional quality.
+                        </p>
+                        
+                        <div className="flex flex-col md:flex-row gap-4 justify-center">
+                            <button className="bg-white text-slate-950 px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-200 transition">
+                                View Our Portfolio
+                            </button>
+                            <button className="bg-slate-800 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-700 transition">
+                                Start a Project
+                            </button>
+                        </div>
+                    </main>
+
+                    {/* Feature Cards */}
+                    <section className="grid md:grid-cols-3 gap-6 mt-24 max-w-6xl w-full">
+                        <div className="bg-industrial p-8 rounded-2xl">
+                            <div className="text-blue-500 mb-4 font-bold">01</div>
+                            <h3 className="text-xl font-bold mb-2">Modern UI/UX</h3>
+                            <p className="text-slate-400 text-sm">Glassmorphism and dark mode aesthetics tailored for tech-forward brands.</p>
+                        </div>
+                        <div className="bg-industrial p-8 rounded-2xl">
+                            <div className="text-blue-500 mb-4 font-bold">02</div>
+                            <h3 className="text-xl font-bold mb-2">Rapid Deployment</h3>
+                            <p className="text-slate-400 text-sm">From concept to live custom domain in days, not weeks.</p>
+                        </div>
+                        <div className="bg-industrial p-8 rounded-2xl">
+                            <div className="text-blue-500 mb-4 font-bold">03</div>
+                            <h3 className="text-xl font-bold mb-2">SEO Optimized</h3>
+                            <p className="text-slate-400 text-sm">Clean code architecture ensures your site ranks high on search engines.</p>
+                        </div>
+                    </section>
+                </div>
+            );
+        }
+
+        // Final Step: Rendering the App into the 'root' div
+        const rootElement = document.getElementById('root');
+        const root = createRoot(rootElement);
+        root.render(<App />);
+    </script>
 </body>
 </html>
